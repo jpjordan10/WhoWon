@@ -10,7 +10,6 @@ Then(/^Veo la "(.*?)"$/) do |pregunta|
     last_response.body.should =~ /#{pregunta}/m
 end
   
-  
 Then(/^Veo la opción "(.*?)"$/) do |opcion|
     last_response.body.should =~ /#{opcion}/m
 end
@@ -31,6 +30,10 @@ Then(/^Debo visualizar la pagina de perdiste$/) do
     last_response.body.should =~ /Perdiste/m
 end
 
+Then(/^Veo contador "(.*?)"$/) do |contador|
+    last_response.body.should =~ /#{contador}/m
+end
+
 Given(/^he ganado$/) do
     visit '/ganaste'
 end
@@ -46,4 +49,3 @@ end
 Then(/^estoy en inicio$/) do
     current_url.should =~ /inicio/m
 end
-  

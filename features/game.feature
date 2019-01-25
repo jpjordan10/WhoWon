@@ -5,13 +5,13 @@ Feature: El juego Who Won
         Then Veo la "Pregunta 1"
         And Veo la opción "4"        
         And Veo la opción "5"
+        And Veo contador "Pregunta 1"
 
     Scenario: Respuesta Correcta
         Given inicio el juego
         And estoy en la ultima pregunta
         When selecciono la opcion correcta 1
         Then Debo visualizar la pagina de ganaste
-
 
     Scenario: Respuesta Incorrecta
         Given inicio el juego
@@ -38,6 +38,8 @@ Feature: El juego Who Won
         When escribo mi nombre
         And me registro
         Then Veo la "Pregunta 1"
+
+    
 
     
         

@@ -1,9 +1,9 @@
 Given(/^inicio el juego$/) do
-    visit '/inicio'
+    visit '/pregunta/1'
 end
 
 Given(/^estoy en la ultima pregunta$/) do
-    visit '/ultimapregunta'
+    visit '/pregunta/3'
 end
 
 Then(/^Veo esta pregunta "(.*?)"$/) do |pregunta|
@@ -47,5 +47,5 @@ When(/^selecciono el link "(.*?)"$/) do |text|
 end
   
 Then(/^estoy en inicio$/) do
-    current_url.should =~ /inicio/m
+    current_url.should =~ /pregunta\/1/m
 end

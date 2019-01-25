@@ -20,11 +20,19 @@ post '/pregunta' do
     erb :index
 end
 
+get '/ganaste' do
+    erb :ganaste
+end
+
 post '/ganaste' do
     erb :ganaste
 end
 
 post '/perdiste' do
+    erb :perdiste
+end
+
+get '/perdiste' do
     erb :perdiste
 end
 

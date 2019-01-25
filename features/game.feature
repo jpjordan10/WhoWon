@@ -23,6 +23,16 @@ Feature: El juego Who Won
         When selecciono la opcion correcta 1
         Then Veo esta pregunta "En que año se descubrio america"
 
+    Scenario: Jugar de nuevo cuando gane
+        Given he ganado
+        When selecciono el link "inicio"
+        Then estoy en inicio
+
+    Scenario: Jugar de nuevo cuando perdi
+        Given he perdido
+        When selecciono el link "inicio"
+        Then estoy en inicio
+
     
 
     

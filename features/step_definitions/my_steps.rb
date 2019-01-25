@@ -33,3 +33,19 @@ end
 Then(/^Veo contador "(.*?)"$/) do |contador|
     last_response.body.should =~ /#{contador}/m
 end
+
+Given(/^he ganado$/) do
+    visit '/ganaste'
+end
+
+Given(/^he perdido$/) do
+    visit '/perdiste'
+end
+
+When(/^selecciono el link "(.*?)"$/) do |text|
+    click_link(text)
+end
+  
+Then(/^estoy en inicio$/) do
+    current_url.should =~ /inicio/m
+end

@@ -6,7 +6,7 @@ Given(/^estoy en la ultima pregunta$/) do
     visit '/ultimapregunta'
 end
 
-Then(/^Veo la "(.*?)"$/) do |pregunta|
+Then(/^Veo "(.*?)"$/) do |pregunta|
     last_response.body.should =~ /#{pregunta}/m
 end
   
@@ -49,3 +49,16 @@ end
 Then(/^estoy en inicio$/) do
     current_url.should =~ /inicio/m
 end
+
+Given(/^cargo el juego$/) do
+    visit '/'
+end
+  
+  When(/^escribo mi nombre "(.*?)"$/) do |nombre|
+    fill_in("nombreJugador", :with => nombre)
+end
+  
+  When(/^me registro$/) do
+    click_button("jugar")
+end
+  

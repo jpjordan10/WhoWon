@@ -1,11 +1,12 @@
-<h2>Pregunta <%= @@preguntas.preguntaActual + 1%> de <%= @@preguntas.preguntas.length %></h2>
+<h1>Esta jugando: <%=@nombreJugador%></h1>
+<h2>  Pregunta <%= @@preguntas.preguntaActual + 1%> de <%= @@preguntas.preguntas.length %></h2>
 
 <h4><%= @pregunta.titulo %></h4>
 
 <% @pregunta.opciones.each_with_index do |opcion, index| %>
     <% if index == @pregunta.respuestaIndice %>
         <% if  @pregunta.esUltimo == true %>
-            <form method="POST" action="/ganaste">
+            <form method="GET" action="/ganaste">
         <% else %>
             <form method="POST" action="/pregunta">
         <% end %>
@@ -14,7 +15,7 @@
             </button>
         </form>
     <% else %>
-        <form method="POST" action="/perdiste">
+        <form method="GET" action="/perdiste">
             <button type="submit" id="opcion<%= index %>" name="opcion<%= index %>">
                 <%= opcion %>
             </button>

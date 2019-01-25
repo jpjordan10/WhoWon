@@ -2,7 +2,7 @@ Feature: El juego Who Won
 
     Scenario: Carga inicial
         Given inicio el juego
-        Then Veo la "Pregunta 1"
+        Then Veo "Pregunta 1"
         And Veo la opción "4"        
         And Veo la opción "5"
         And Veo contador "Pregunta 1"
@@ -21,7 +21,7 @@ Feature: El juego Who Won
     Scenario: Navegación respuesta correcta
         Given inicio el juego
         When selecciono la opcion correcta 1
-        Then Veo la "Pregunta 2"
+        Then Veo "Pregunta 2"
 
     Scenario: Jugar de nuevo cuando gane
         Given he ganado
@@ -35,9 +35,10 @@ Feature: El juego Who Won
 
     Scenario: Registrar jugador
         Given cargo el juego
-        When escribo mi nombre
+        When escribo mi nombre "DemoPeruanoArgentina"
         And me registro
-        Then Veo la "Pregunta 1"
+        Then Veo "Pregunta 1"
+        And Veo "DemoPeruanoArgentina"
 
     
 

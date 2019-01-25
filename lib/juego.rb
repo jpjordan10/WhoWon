@@ -17,4 +17,8 @@ class Juego
     def totalDePreguntas
         @preguntas.preguntas.length
     end
+
+    def cambiarNombreJugador newValue
+        @nombreJugador = newValue
+    end
 end

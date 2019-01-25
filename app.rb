@@ -2,15 +2,19 @@ require 'sinatra'
 require './lib/juego.rb'
 
 get '/' do
+    @@juego = Juego.new ""
     erb :registro
 end
 
 get '/pregunta/:numero' do |numero|
 
-
-    @@juego = Juego.new params[:nombreJugador]
-
     @numero = numero.to_i
+    if @numero == 1
+        @@juego = Juego.new ""
+    end
+    if params[:nombreJugador] != nil
+        @@juego.cambiarNombreJugador params[:nombreJugador]
+    end
     
     @pregunta = @@juego.preguntas.preguntas[@numero - 1]
     erb :index

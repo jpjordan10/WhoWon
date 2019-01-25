@@ -40,6 +40,14 @@ Feature: El juego Who Won
         Then Veo "Pregunta 1"
         And Veo "DemoPeruanoArgentina"
 
+    Scenario: Se ve el nombre del jugador al perder
+        Given cargo el juego
+        When escribo mi nombre "DemoPeruanoArgentina"
+        And me registro
+        And selecciono la opcion correcta 0
+        Then Debo visualizar la pagina de perdiste
+        And Veo "DemoPeruanoArgentina"
+
     
 
     

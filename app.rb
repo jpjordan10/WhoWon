@@ -29,7 +29,6 @@ post '/perdiste' do
 end
 
 get '/ultimapregunta' do
-    @@preguntas = ListaPregunta.new
     @pregunta = @@preguntas.preguntas[@@preguntas.preguntas.length - 1]
     erb :index
 end

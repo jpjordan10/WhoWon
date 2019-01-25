@@ -7,7 +7,8 @@ Feature: El juego Who Won
         And Veo la opción "5"
 
     Scenario: Respuesta Correcta
-        Given estoy en la ultima pregunta
+        Given inicio el juego
+        And estoy en la ultima pregunta
         When selecciono la opcion correcta 1
         Then Debo visualizar la pagina de ganaste
 

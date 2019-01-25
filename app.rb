@@ -6,6 +6,8 @@ get '/' do
 end
 
 get '/pregunta/:numero' do |numero|
+
+    @nombreJugador = params[:nombreJugador]
     @numero = numero.to_i
     if @numero == 1  
         @@preguntas = ListaPregunta.new
@@ -14,14 +16,6 @@ get '/pregunta/:numero' do |numero|
     erb :index
 end
 
-post '/pregunta/:numero' do |numero|
-    @numero = numero.to_i
-    if @numero == 1  
-        @@preguntas = ListaPregunta.new
-    end
-    @pregunta = @@preguntas.preguntas[@numero - 1]
-    erb :index
-end
 
 get '/ganaste' do
     erb :ganaste

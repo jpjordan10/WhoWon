@@ -1,5 +1,5 @@
 <h1>Esta jugando: <%=@nombreJugador%></h1>
-<h2>  Pregunta <%= @@preguntas.preguntaActual + 1%> de <%= @@preguntas.preguntas.length %></h2>
+<h2>  Pregunta <%= @numero %> de <%= @@preguntas.preguntas.length %></h2>
 
 <h4><%= @pregunta.titulo %></h4>
 
@@ -9,7 +9,7 @@
         <% if  @numero == @@preguntas.preguntas.length %>
             <form method="GET" action="/ganaste">
         <% else %>
-            <form method="POST" action="/pregunta/<%= @numero + 1 %>">
+            <form method="GET" action="/pregunta/<%= @numero + 1 %>">
         <% end %>
             <button type="submit" id="opcion<%= index %>" name="opcion<%= index %>">
                 <%= opcion %>

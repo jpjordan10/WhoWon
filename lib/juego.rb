@@ -5,4 +5,16 @@ class Juego
         @preguntas  = ListaPregunta.new
         @nombreJugador = nombreJugador
     end
+
+    def nombreJugador
+        @nombreJugador
+    end
+  
+    def preguntas
+        @preguntas
+    end
+
+    def totalDePreguntas
+        @preguntas.preguntas.length
+    end
 end

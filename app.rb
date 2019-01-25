@@ -1,5 +1,5 @@
 require 'sinatra'
-require './lib/lista_pregunta.rb'
+require './lib/juego.rb'
 
 get '/' do
     erb :registro
@@ -7,12 +7,12 @@ end
 
 get '/pregunta/:numero' do |numero|
 
-    @nombreJugador = params[:nombreJugador]
+
+    @@juego = Juego.new params[:nombreJugador]
+
     @numero = numero.to_i
-    if @numero == 1  
-        @@preguntas = ListaPregunta.new
-    end
-    @pregunta = @@preguntas.preguntas[@numero - 1]
+    
+    @pregunta = @@juego.preguntas.preguntas[@numero - 1]
     erb :index
 end
 

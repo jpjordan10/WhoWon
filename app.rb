@@ -1,8 +1,9 @@
 require 'sinatra'
-require './lib/pregunta.rb'
+require './lib/lista_pregunta.rb'
 
 get '/' do
-    @pregunta = Pregunta.new "Cuanto es 2 mas 2",["3","4","5", "6", "7"], 1
+    @preguntas = ListaPregunta.new
+    @pregunta = @preguntas.preguntas[0]
     erb :index
 end
 

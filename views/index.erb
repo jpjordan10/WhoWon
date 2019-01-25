@@ -1,8 +1,13 @@
-<h4>Cuanto es 2 mas 2</h4>
+<h4><%=@pregunta.titulo%></h4>
+
 <form method="POST" action="/ganaste">
-    <button type="submit" id="opcionA" name="opcionA">4</button>
+    <button type="submit" id="opcionA" name="opcionA">
+        <%=@pregunta.opciones[0]%>
+    </button>
 </form>
 
 <form method="POST" action="/perdiste">
-    <button type="submit" id="opcionB" name="opcionB">5</button>
+    <button type="submit" id="opcionB" name="opcionB">
+        <%=@pregunta.opciones[1]%>        
+    </button>
 </form>

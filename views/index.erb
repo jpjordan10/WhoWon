@@ -2,7 +2,11 @@
 
 <% @pregunta.opciones.each_with_index do |opcion, index| %>
     <% if index == @pregunta.respuestaIndice %>
-        <form method="POST" action="/ganaste">
+    <% if  @pregunta.esUltimo == true %>
+        <form method="POST" action="/ganaste"><form>
+    <% else %>
+        <form method="POST" action="/pregunta">
+    <% end %>
             <button type="submit" id="opcion<%= index %>" name="opcion<%= index %>">
                 <%= opcion %>
             </button>

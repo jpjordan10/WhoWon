@@ -7,14 +7,20 @@ Feature: El juego Who Won
         And Veo la opción "5"
 
     Scenario: Respuesta Correcta
-        Given  inicio el juego
+        Given estoy en la ultima pregunta
         When selecciono la opcion correcta 1
         Then Debo visualizar la pagina de ganaste
 
 
     Scenario: Respuesta Incorrecta
-        Given  inicio el juego
+        Given inicio el juego
         When selecciono la opcion incorrecta 3
         Then Debo visualizar la pagina de perdiste
 
+    Scenario: Navegación respuesta correcta
+        Given inicio el juego
+        When selecciono la opcion correcta 1
+        Then Veo esta pregunta "En que año se descubrio america"
+
     
+        

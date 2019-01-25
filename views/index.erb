@@ -1,4 +1,6 @@
-<h4><%=@pregunta.titulo%></h4>
+<h2>Pregunta <%= @@preguntas.preguntaActual + 1%> de <%= @@preguntas.preguntas.length %></h2>
+
+<h4><%= @pregunta.titulo %></h4>
 
 <% @pregunta.opciones.each_with_index do |opcion, index| %>
     <% if index == @pregunta.respuestaIndice %>

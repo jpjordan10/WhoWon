@@ -8,11 +8,13 @@ Feature: El juego Who Won
 
     Scenario: Respuesta Correcta
         Given  inicio el juego
-        When selecciono la opcion correcta
+        When selecciono la opcion correcta 1
         Then Debo visualizar la pagina de ganaste
 
 
     Scenario: Respuesta Incorrecta
         Given  inicio el juego
-        When selecciono la opcion incorrecta
+        When selecciono la opcion incorrecta 3
         Then Debo visualizar la pagina de perdiste
+
+    

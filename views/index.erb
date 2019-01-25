@@ -1,13 +1,18 @@
 <h4><%=@pregunta.titulo%></h4>
 
-<form method="POST" action="/ganaste">
-    <button type="submit" id="opcionA" name="opcionA">
-        <%=@pregunta.opciones[0]%>
-    </button>
-</form>
+<% @pregunta.opciones.each_with_index do |opcion, index| %>
+    <% if index == @pregunta.respuestaIndice %>
+        <form method="POST" action="/ganaste">
+            <button type="submit" id="opcion<%= index %>" name="opcion<%= index %>">
+                <%= opcion %>
+            </button>
+        </form>
+    <% else %>
+        <form method="POST" action="/perdiste">
+            <button type="submit" id="opcion<%= index %>" name="opcion<%= index %>">
+                <%= opcion %>
+            </button>
+        </form>
+    <% end %>
 
-<form method="POST" action="/perdiste">
-    <button type="submit" id="opcionB" name="opcionB">
-        <%=@pregunta.opciones[1]%>        
-    </button>
-</form>
+<% end %>

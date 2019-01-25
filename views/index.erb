@@ -5,10 +5,11 @@
 
 <% @pregunta.opciones.each_with_index do |opcion, index| %>
     <% if index == @pregunta.respuestaIndice %>
-        <% if  @pregunta.esUltimo == true %>
+       
+        <% if  @numero == @@preguntas.preguntas.length %>
             <form method="GET" action="/ganaste">
         <% else %>
-            <form method="POST" action="/pregunta">
+            <form method="POST" action="/pregunta/<%= @numero + 1 %>">
         <% end %>
             <button type="submit" id="opcion<%= index %>" name="opcion<%= index %>">
                 <%= opcion %>

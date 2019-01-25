@@ -5,23 +5,21 @@ get '/' do
     erb :registro
 end
 
-get '/inicio' do
-    @nombreJugador = params[:nombreJugador].to_s
-    @@preguntas = ListaPregunta.new
-    @pregunta = @@preguntas.preguntas[0]
+get '/pregunta/:numero' do |numero|
+    @numero = numero.to_i
+    if @numero == 1  
+        @@preguntas = ListaPregunta.new
+    end
+    @pregunta = @@preguntas.preguntas[@numero - 1]
     erb :index
 end
 
-get '/pregunta' do
-    @pregunta = @@preguntas.preguntas[@@preguntas.preguntaActual]
-    erb :index
-end
-
-post '/pregunta' do
-    @@preguntas.irSiguientePregunta()
-    # redirect to ('/pregunta') 
-    @pregunta = @@preguntas.preguntas[@@preguntas.preguntaActual]    
-
+post '/pregunta/:numero' do |numero|
+    @numero = numero.to_i
+    if @numero == 1  
+        @@preguntas = ListaPregunta.new
+    end
+    @pregunta = @@preguntas.preguntas[@numero - 1]
     erb :index
 end
 

@@ -2,7 +2,7 @@ Feature: El juego Who Won
 
     Scenario: Carga inicial
         Given inicio el juego
-        Then Veo esta pregunta "Cuanto es 2 mas 2"
+        Then Veo la "Pregunta 1"
         And Veo la opción "4"        
         And Veo la opción "5"
 
@@ -21,7 +21,7 @@ Feature: El juego Who Won
     Scenario: Navegación respuesta correcta
         Given inicio el juego
         When selecciono la opcion correcta 1
-        Then Veo esta pregunta "En que año se descubrio america"
+        Then Veo la "Pregunta 2"
 
     Scenario: Jugar de nuevo cuando gane
         Given he ganado
@@ -32,6 +32,12 @@ Feature: El juego Who Won
         Given he perdido
         When selecciono el link "inicio"
         Then estoy en inicio
+
+    Scenario: Registrar jugador
+        Given cargo el juego
+        When escribo mi nombre
+        And me registro
+        Then Veo la "Pregunta 1"
 
     
         

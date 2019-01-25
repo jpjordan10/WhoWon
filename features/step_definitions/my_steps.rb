@@ -6,7 +6,7 @@ Given(/^estoy en la ultima pregunta$/) do
     visit '/ultimapregunta'
 end
 
-Then(/^Veo esta pregunta "(.*?)"$/) do |pregunta|
+Then(/^Veo la "(.*?)"$/) do |pregunta|
     last_response.body.should =~ /#{pregunta}/m
 end
   

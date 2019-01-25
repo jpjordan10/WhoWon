@@ -15,3 +15,21 @@ end
     last_response.body.should =~ /#{opcion}/m
   end
   
+  
+When(/^selecciono la opcion correcta$/) do
+    click_button("opcionA")
+end
+  
+Then(/^Debo visualizar la pagina de ganaste$/) do
+    last_response.body.should =~ /Ganaste/m
+end
+
+When(/^selecciono la opcion incorrecta$/) do
+    click_button("opcionB")
+end
+
+Then(/^Debo visualizar la pagina de perdiste$/) do
+    last_response.body.should =~ /Perdiste/m
+end
+
+  

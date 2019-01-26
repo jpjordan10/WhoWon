@@ -3,11 +3,9 @@ require './lib/pregunta.rb'
 class ListaPregunta
     def initialize
         @preguntaActual = 0
-    end
 
-    def preguntas
-        [            
-            Pregunta.new("En que año se descubrio america", ["1482","1492", "1499"], 1),            
+        @preguntas =  [            
+            
             Pregunta.new("¿Qué tipo de palabra se utiliza en cada versión actualizada del sistema operativo Android?", [
                 "El nombre de una temporada",
                 "EL nombre de algún nativo estadounidense",
@@ -56,14 +54,22 @@ class ListaPregunta
                 "1945",
                 "1914",
                 "1918"
-            ], 0),
-            Pregunta.new("¿Qué país declaró la guerra a España para lograr la independencia de Cuba en 1898?", [
-                "Francia",
-                "Perú",
-                "Estados Unidos",
-                "México"
-            ], 2)
+            ], 0)
+           
         ]
+
+        @preguntas_rand = @preguntas.shuffle
+        @preguntas_rand.insert 0, Pregunta.new("En que año se descubrio america", ["1482","1492", "1499"], 1)
+        @preguntas_rand.push  Pregunta.new("¿Qué país declaró la guerra a España para lograr la independencia de Cuba en 1898?", [
+            "Francia",
+            "Perú",
+            "Estados Unidos",
+            "México"
+        ], 2)
+    end
+
+    def preguntas
+       @preguntas_rand
     end
 
     def preguntaActual

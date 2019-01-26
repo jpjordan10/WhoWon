@@ -61,4 +61,10 @@ end
   When(/^me registro$/) do
     click_button("jugar")
 end
+
+Given(/^He iniciado el juego$/) do
+    pending # express the regexp above with the code you wish you had
+end
+  
+  
   

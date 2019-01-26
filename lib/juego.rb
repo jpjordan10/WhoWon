@@ -4,6 +4,8 @@ class Juego
     def initialize nombreJugador
         @preguntas  = ListaPregunta.new
         @nombreJugador = nombreJugador
+        @dineroGanado = 0
+        @ultimaPregunta = nil
     end
 
     def nombreJugador
@@ -20,5 +22,21 @@ class Juego
 
     def cambiarNombreJugador newValue
         @nombreJugador = newValue
+    end
+
+    def acumularDinero monto
+        @dineroGanado+=monto
+    end
+
+    def dineroGanado
+        @dineroGanado
+    end
+
+    def asignarUltimaPregunta ultimaPregunta
+        @ultimaPregunta = ultimaPregunta
+    end
+
+    def ultimaPregunta
+        @ultimaPregunta
     end
 end

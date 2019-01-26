@@ -3,7 +3,7 @@ class Pregunta
         @titulo = titulo
         @opciones = opciones
         @respuestaIndice = respuestaIndice
-        @esUltimo = esUltimo
+        @dineroGanado = opciones.length * 100
     end
 
     def titulo
@@ -18,7 +18,8 @@ class Pregunta
         @respuestaIndice
     end
 
-    def esUltimo
-        @esUltimo
+    def dineroGanado
+        @dineroGanado
     end
+
 end

@@ -7,11 +7,12 @@ Feature: El juego Who Won
         And Veo la opción "5"
         And Veo contador "Pregunta 1"
 
-    Scenario: Respuesta Correcta
+    Scenario: Contesto correctamente la ultima pregunta
         Given inicio el juego
         And estoy en la ultima pregunta
         When selecciono la opcion correcta 1
         Then Debo visualizar la pagina de ganaste
+        And Veo "Felicidades, Te llevaste"
 
     Scenario: Respuesta Incorrecta
         Given inicio el juego
@@ -48,7 +49,9 @@ Feature: El juego Who Won
         Then Debo visualizar la pagina de perdiste
         And Veo "DemoPeruanoArgentina"
 
-    
-
-    
+    Scenario: Mostrar Dinero por pregunta
+        Given cargo el juego
+        And escribo mi nombre "DineroDineroAprendeUnPocoDinero"
+        And me registro
+        Then Veo "Has ganado 0"    
         

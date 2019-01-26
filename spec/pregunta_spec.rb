@@ -19,10 +19,10 @@ describe "Definicion de pregunta" do
         expect( pregunta.respuestaIndice ).to eq 1
     end
 
-    it "Establecer ultima pregunta" do
+    it "Establecer dinero a ganar como numero de opciones por cien" do
         pregunta = Pregunta.new "cuanto es 2 mas 2", ["4","5"], 1, true
 
-        expect( pregunta.esUltimo ).to eq true
+        expect( pregunta.dineroGanado ).to eq 200
     end
 end
 

@@ -7,10 +7,11 @@ get '/' do
 end
 
 get '/pregunta/:numero' do |numero|
-
     @numero = numero.to_i
     if @numero == 1
         @@juego = Juego.new ""
+    else
+        @@juego.acumularDinero(@@juego.ultimaPregunta.dineroGanado * @numero)
     end
     if params[:nombreJugador] != nil
         @@juego.cambiarNombreJugador params[:nombreJugador]
@@ -19,6 +20,7 @@ get '/pregunta/:numero' do |numero|
     end
     
     @pregunta = @@juego.preguntas.preguntas[@numero - 1]
+    @@juego.asignarUltimaPregunta @pregunta
     erb :index
 end
 

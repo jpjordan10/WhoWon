@@ -1,6 +1,9 @@
 require 'sinatra'
 require './lib/juego.rb'
 
+ganadores = ["Luis", "JP", "Alonso", "Ronald"]
+perdedores = []
+
 get '/' do
     @@juego = Juego.new ""
     erb :registro
@@ -13,7 +16,7 @@ get '/pregunta/:numero' do |numero|
     else
         @@juego.acumularDinero(@@juego.ultimaPregunta.dineroGanado * @numero)
     end
-    
+
     if @@juego.nombreJugador == ""
         if params[:nombreJugador] != nil
             @@juego.cambiarNombreJugador params[:nombreJugador]
@@ -29,10 +32,14 @@ end
 
 
 get '/ganaste' do
+    ganadores.push @@juego.nombreJugador
+    @ganadores = ganadores
     erb :ganaste
 end
 
 get '/perdiste' do
+    perdedores.push @@juego.nombreJugador
+    @perdedores = perdedores
     erb :perdiste
 end
 

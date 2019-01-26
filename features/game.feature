@@ -13,12 +13,14 @@ Feature: El juego Who Won
         When selecciono la opcion correcta 1
         Then Debo visualizar la pagina de ganaste
         And Veo "Felicidades, Te llevaste"
+        And Veo "Los ganadores fueron"
 
     Scenario: Respuesta Incorrecta
         Given inicio el juego
         When selecciono la opcion incorrecta 3
         Then Debo visualizar la pagina de perdiste
         And Veo "Perdiste todo"
+        And Veo "Los perdedores fueron"
 
     Scenario: Navegación respuesta correcta
         Given inicio el juego

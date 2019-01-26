@@ -4,3 +4,11 @@
 
 
 <a href="/" id="inicio">Volver a Jugar</a>
+
+Los perdedores fueron:
+
+<ul>
+    <% @perdedores.each do |nombre|%>
+        <li><%=nombre%></li>
+    <% end %>
+</ul>

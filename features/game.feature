@@ -56,5 +56,5 @@ Feature: El juego Who Won
         Given cargo el juego
         And escribo mi nombre "DineroDineroAprendeUnPocoDinero"
         And me registro
-        Then Veo "Has ganado 0"    
+        Then Veo "Si contestas correctamente acumularás"    
         

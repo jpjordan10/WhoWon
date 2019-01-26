@@ -13,8 +13,6 @@ get '/pregunta/:numero' do |numero|
     @numero = numero.to_i
     if @numero == 1
         @@juego = Juego.new ""
-    else
-        @@juego.acumularDinero(@@juego.ultimaPregunta.dineroGanado * @numero)
     end
 
     if @@juego.nombreJugador == ""
@@ -26,12 +24,13 @@ get '/pregunta/:numero' do |numero|
     end
     
     @pregunta = @@juego.preguntas.preguntas[@numero - 1]
-    @@juego.asignarUltimaPregunta @pregunta
+    @@juego.acumularDinero(@pregunta.dineroGanado * @numero * 10)
     erb :index
 end
 
 
 get '/ganaste' do
+  
     ganadores.push @@juego.nombreJugador
     @ganadores = ganadores
     erb :ganaste

@@ -18,6 +18,7 @@ Feature: El juego Who Won
         Given inicio el juego
         When selecciono la opcion incorrecta 3
         Then Debo visualizar la pagina de perdiste
+        And Veo "Perdiste todo"
 
     Scenario: Navegación respuesta correcta
         Given inicio el juego

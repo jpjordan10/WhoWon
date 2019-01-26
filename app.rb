@@ -14,6 +14,8 @@ get '/pregunta/:numero' do |numero|
     end
     if params[:nombreJugador] != nil
         @@juego.cambiarNombreJugador params[:nombreJugador]
+    else 
+        @@juego.cambiarNombreJugador "El player"
     end
     
     @pregunta = @@juego.preguntas.preguntas[@numero - 1]

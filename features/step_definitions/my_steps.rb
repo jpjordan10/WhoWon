@@ -47,7 +47,7 @@ When(/^selecciono el link "(.*?)"$/) do |text|
 end
   
 Then(/^estoy en inicio$/) do
-    current_url.should =~ /pregunta\/1/m
+    current_url.should == "/"
 end
 
 Given(/^cargo el juego$/) do

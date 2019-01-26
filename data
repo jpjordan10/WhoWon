@@ -1,0 +1,109 @@
+require './lib/pregunta.rb'
+
+class ListaPreguntaData
+    def initialize
+        @preguntaActual = 0
+    end
+
+    def preguntas
+        [
+            Pregunta.new("¿Cuántos dientes tiene una persona adulta?",
+                    [
+                     "32",
+                     "28",
+                     "30"
+                    ], 
+                    0,
+                    false),
+            
+            Pregunta.new("¿Quién escribió 'El Principito'?",
+                    [
+                     "Jorge Luis Borges",
+                     "Antoine de Saint-Exupéry",
+                     "Victor Hugo"
+                    ], 
+                    1,
+                    false),
+            
+            Pregunta.new("¿Cuál de estas series cuenta con un protagonista con displasia cleidocraneal?",
+                    [
+                     "Juego de Tronos",
+                     "Strange Things",
+                     "Black Mirror"
+                    ], 
+                    1,
+                    false),
+            
+            Pregunta.new("¿Quién fue David Hume?",
+                    [
+                     "Un youtuber",
+                     "Un cientifico",
+                     "Un filosofo"
+                    ], 
+                    2,
+                    false),
+            
+            Pregunta.new("En la tabla periódica, 'Ca' representa a:",
+                    [
+                     "Carbono",
+                     "Carburo",
+                     "Calcio"
+                    ], 
+                    2,
+                    false),
+            
+            Pregunta.new("¿Cuándo acabó la Segunda Guerra Mundial?",
+                    [
+                     "1940",
+                     "1945",
+                     "1955"
+                    ], 
+                    1,
+                    false),
+
+            Pregunta.new("La velocidad a la que viaja la luz es",
+                    [
+                     "300,000 km/s",
+                     "30,000 km/h",
+                     "300,000 m/s"
+                    ], 
+                    0,
+                    false),
+            
+            Pregunta.new("¿Qué inventó Alfred Nobel, el que da nombre a los famosos premios?",
+                    [
+                     "La dinamita",
+                     "La bomba atomica",
+                     "La penicilina"
+                    ], 
+                    0,
+                    false),
+
+            Pregunta.new("Para los botánicos, el tomate es una:",
+                    [
+                     "Hortaliza",
+                     "Verdura",
+                     "Fruta"
+                    ], 
+                    2,
+                    false),
+
+            Pregunta.new("¿Cuál es la principal función de los globulos rojos?",
+                    [
+                     "Llevar oxigeno",
+                     "Coagular la sandre",
+                     "Combatir enfermedades"
+                    ], 
+                    0,
+                    false)
+        ]
+    end
+
+    def preguntaActual
+        @preguntaActual
+    end
+
+    def irSiguientePregunta
+        @preguntaActual+=1
+    end
+end

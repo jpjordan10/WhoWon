@@ -13,12 +13,14 @@ Feature: El juego Who Won
         When selecciono la opcion correcta 2
         Then Debo visualizar la pagina de ganaste
         And Veo "Felicidades, Te llevaste"
+        And Veo "Los ganadores fueron"
 
     Scenario: Respuesta Incorrecta
         Given inicio el juego
         When selecciono la opcion incorrecta 3
         Then Debo visualizar la pagina de perdiste
         And Veo "Perdiste todo"
+        And Veo "Los perdedores fueron"
 
     Scenario: Navegación respuesta correcta
         Given inicio el juego
@@ -54,5 +56,5 @@ Feature: El juego Who Won
         Given cargo el juego
         And escribo mi nombre "DineroDineroAprendeUnPocoDinero"
         And me registro
-        Then Veo "Has ganado 0"    
+        Then Veo "Si contestas correctamente acumularás"    
         

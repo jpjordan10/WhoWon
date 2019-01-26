@@ -3,3 +3,11 @@
 <h4>Ganaste</h4>
 <br>
 <a href="/" id="inicio">Volver a Jugar</a>
+
+</br>
+Los ganadores fueron
+<ul>
+        <% @ganadores.each do |nombre|%>
+            <li><%=nombre%></li>
+        <% end %>
+    </ul>

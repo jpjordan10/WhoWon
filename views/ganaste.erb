@@ -1,13 +1,17 @@
-<h1>Esta jugando: <%= @@juego.nombreJugador%></h1>
-<h2>Felicidades, Te llevaste <%= @@juego.dineroGanado%> a tu casa!</h2>
-<h4>Ganaste</h4>
+<h2>Ganó:
+    <i>
+        <%= @@juego.nombreJugador%>
+    </i>
+</h3>
+<h3>Felicidades Ganaste, Te llevaste <%= @@juego.dineroGanado%> beninis a tu casa!</h3>
 <br>
 <a href="/" id="inicio">Volver a Jugar</a>
 
 </br>
-Los ganadores fueron
-<ul>
-        <% @ganadores.each do |nombre|%>
-            <li><%=nombre%></li>
-        <% end %>
-    </ul>
+        
+<ul class="collection with-header">
+    <li class="collection-header"><h4>Los ganadores fueron:</h4></li>
+    <% @ganadores.each do |nombre|%>
+        <li class="collection-item"><%=nombre%></li>
+    <% end %>
+</ul>

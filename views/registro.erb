@@ -1,10 +1,16 @@
-
 <h1>Bienvenido a Quien quiere ser Beniniano</h1>
 
-<form action="/pregunta/1" method="GET">
+<form action="/pregunta/1" method="GET" class="col s12">
 
-    <input type="text" name="nombreJugador" id="nombreJugador">
-
-    <input type="submit" value="Jugar!" id="jugar">
+    <div class="row">
+        <div class="col s12">
+            Con que nombre desea jugar:
+            <div class="input-field inline">
+                <input type="text" name="nombreJugador" id="nombreJugador"  placeholder="Enyel">
+                <label for="nombreJugador">Nombre del jugador</label>
+            </div>
+        </div>
+    </div>
+    <button class="waves-effect waves-light btn" type="submit" value="Jugar!" id="jugar">Jugar!</button>
 
 </form>

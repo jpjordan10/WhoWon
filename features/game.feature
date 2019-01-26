@@ -10,7 +10,7 @@ Feature: El juego Who Won
         And estoy en la ultima pregunta
         When selecciono la opcion correcta 2
         Then Debo visualizar la pagina de ganaste
-        And Veo "Felicidades, Te llevaste"
+        And Veo "Felicidades Ganaste, Te llevaste"
         And Veo "Los ganadores fueron"
 
     Scenario: Respuesta Incorrecta

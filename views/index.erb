@@ -1,24 +1,41 @@
-<h1>Esta jugando: <%= @@juego.nombreJugador%></h1>
-<h2>Si contestas correctamente acumularás <%= @@juego.dineroGanado%> benines </h2>
-<h3>  Pregunta <%= @numero %> de <%= @@juego.totalDePreguntas %></h3>
+<h1>Esta jugando: <i><%= @@juego.nombreJugador%></i></h1>
+<h3>Si contestas correctamente acumularás <i><%= @@juego.dineroGanado%></i>  benines </h3>
 
-<h4><%= @pregunta.titulo %></h4>
+<div class="row">
+    <div class="col s12 ">
+        <div class="card ">
+            <div class="card-content">
+              <span class="card-title">
+                    Pregunta <%= @numero %> de <%= @@juego.totalDePreguntas %>
+              </span>
+              <h4><%= @pregunta.titulo %></h4>
+            </div>
+            <div class="card-action text-center">
+                <div class="row">
+                            <% @pregunta.opciones.each_with_index do |opcion, index| %>
+                                <% if index == @pregunta.respuestaIndice %>
+                                   
+                                    <% if  @numero ==  @@juego.totalDePreguntas %>
+                                        <form method="GET" action="/ganaste">
+                                    <% else %>
+                                        <form method="GET" action="/pregunta/<%= @numero + 1 %>">
+                                    <% end %>
+                                <% else %>
+                                    <form method="GET" action="/perdiste">
+                                <% end %>
+                            
+                                <div class="row">
+                                    <button class="waves-effect waves-light btn-large" type="submit" id="opcion<%= index %>">
+                                        <%= opcion %>
+                                    </button>
+                                </div>
+                                </form>
+                            <% end %>
+                    </div>
+            </div>
+          </div>
+        </div>
+</div>
+                
 
-<% @pregunta.opciones.each_with_index do |opcion, index| %>
-    <% if index == @pregunta.respuestaIndice %>
-       
-        <% if  @numero ==  @@juego.totalDePreguntas %>
-            <form method="GET" action="/ganaste">
-        <% else %>
-            <form method="GET" action="/pregunta/<%= @numero + 1 %>">
-        <% end %>
-    <% else %>
-        <form method="GET" action="/perdiste">
-    <% end %>
 
-
-    <button type="submit" id="opcion<%= index %>">
-            <%= opcion %>
-        </button>
-    </form>
-<% end %>

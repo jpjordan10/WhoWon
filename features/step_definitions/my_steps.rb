@@ -3,7 +3,7 @@ Given(/^inicio el juego$/) do
 end
 
 Given(/^estoy en la ultima pregunta$/) do
-    visit '/pregunta/3'
+    visit '/pregunta/11'
 end
 
 Then(/^Veo "(.*?)"$/) do |pregunta|

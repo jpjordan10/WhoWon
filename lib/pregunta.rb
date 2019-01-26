@@ -1,5 +1,5 @@
 class Pregunta
-    def initialize titulo, opciones, respuestaIndice, esUltimo
+    def initialize titulo, opciones, respuestaIndice
         @titulo = titulo
         @opciones = opciones
         @respuestaIndice = respuestaIndice

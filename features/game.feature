@@ -10,7 +10,7 @@ Feature: El juego Who Won
     Scenario: Contesto correctamente la ultima pregunta
         Given inicio el juego
         And estoy en la ultima pregunta
-        When selecciono la opcion correcta 1
+        When selecciono la opcion correcta 2
         Then Debo visualizar la pagina de ganaste
         And Veo "Felicidades, Te llevaste"
 

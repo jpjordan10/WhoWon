@@ -32,8 +32,3 @@ end
 get '/perdiste' do
     erb :perdiste
 end
-
-get '/ultimapregunta' do
-    @pregunta = @@preguntas.preguntas[@@preguntas.preguntas.length - 1]
-    erb :index
-end

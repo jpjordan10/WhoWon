@@ -13,10 +13,13 @@ get '/pregunta/:numero' do |numero|
     else
         @@juego.acumularDinero(@@juego.ultimaPregunta.dineroGanado * @numero)
     end
-    if params[:nombreJugador] != nil
-        @@juego.cambiarNombreJugador params[:nombreJugador]
-    else 
-        @@juego.cambiarNombreJugador "El player"
+    
+    if @@juego.nombreJugador == ""
+        if params[:nombreJugador] != nil
+            @@juego.cambiarNombreJugador params[:nombreJugador]
+        else 
+            @@juego.cambiarNombreJugador "El player"
+        end
     end
     
     @pregunta = @@juego.preguntas.preguntas[@numero - 1]

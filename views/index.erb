@@ -11,7 +11,7 @@
               <h4><%= @pregunta.titulo %></h4>
             </div>
             <div class="card-action text-center">
-                <div class="row">
+                <div class="row text-center">
                             <% @pregunta.opciones.each_with_index do |opcion, index| %>
                                 <% if index == @pregunta.respuestaIndice %>
                                    
@@ -24,7 +24,7 @@
                                     <form method="GET" action="/perdiste">
                                 <% end %>
                             
-                                <div class="row">
+                                <div class="col s6 row">
                                     <button class="waves-effect waves-light btn-large" type="submit" id="opcion<%= index %>">
                                         <%= opcion %>
                                     </button>

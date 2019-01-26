@@ -36,6 +36,24 @@
           </div>
         </div>
 </div>
+
+
+<div class="progress">
+        <div class="determinate" style="width: 100%" id="test"></div>
+    </div>
+<script>
+const tiempo = 10 * 1000
+const interval = 200
+const reduccion = 100/(tiempo/interval)
+setInterval(function(){
+    let actualWidth = document.getElementById("test").style.width.slice(0,-1)
+    document.getElementById("test").style.width = (actualWidth-reduccion)+"%"
+},interval)
+
+setTimeout(function(){
+    window.open("/perdiste", "_self")
+},tiempo+interval*2)
+</script>
                 
 
 

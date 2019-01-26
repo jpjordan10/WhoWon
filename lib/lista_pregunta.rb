@@ -6,10 +6,8 @@ class ListaPregunta
     end
 
     def preguntas
-        [
-            Pregunta.new("Cuanto es 2 mas 2",["3","4","5", "6", "7"], 1),
-            Pregunta.new("En que año se descubrio america", ["1482","1492"], 1),
-            Pregunta.new("cuanto es 3 por 3", ["5","9", "1"], 1),
+        [            
+            Pregunta.new("En que año se descubrio america", ["1482","1492", "1499"], 1),            
             Pregunta.new("¿Qué tipo de palabra se utiliza en cada versión actualizada del sistema operativo Android?", [
                 "El nombre de una temporada",
                 "EL nombre de algún nativo estadounidense",
@@ -46,6 +44,13 @@ class ListaPregunta
                 "Una perra",
                 "UNa loba"
             ], 3),
+            Pregunta.new("La velocidad a la que viaja la luz es",
+                [
+                 "300,000 km/s",
+                 "30,000 km/h",
+                 "300,000 m/s"
+                ], 
+                0),
             Pregunta.new("¿Cuándo comenzó la Segunda Guerra Mundial?", [
                 "1939",
                 "1945",

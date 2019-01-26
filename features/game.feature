@@ -2,9 +2,7 @@ Feature: El juego Who Won
 
     Scenario: Carga inicial
         Given inicio el juego
-        Then Veo "Pregunta 1"
-        And Veo la opción "4"        
-        And Veo la opción "5"
+        Then Veo "Pregunta 1"        
         And Veo contador "Pregunta 1"
 
     Scenario: Contesto correctamente la ultima pregunta
@@ -17,7 +15,7 @@ Feature: El juego Who Won
 
     Scenario: Respuesta Incorrecta
         Given inicio el juego
-        When selecciono la opcion incorrecta 3
+        When selecciono la opcion incorrecta 2
         Then Debo visualizar la pagina de perdiste
         And Veo "Perdiste todo"
         And Veo "Los perdedores fueron"

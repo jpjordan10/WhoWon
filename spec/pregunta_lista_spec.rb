@@ -3,7 +3,7 @@ require './lib/lista_pregunta.rb'
 describe "Definicion de Lista de Preguntas" do
     it "Lista con tres preguntas" do
         lista = ListaPregunta.new
-        expect(lista.preguntas.length).to eq 11
+        expect(lista.preguntas.length).to eq 10
     end
 
     it "Lista con contador con indice de Pregunta actual en 0" do

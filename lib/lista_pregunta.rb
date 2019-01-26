@@ -54,7 +54,13 @@ class ListaPregunta
                 "1945",
                 "1914",
                 "1918"
-            ], 0)
+            ], 0),
+            Pregunta.new("¿A qué ‘Suyo’ pertenecía el Tahuantinsuyo?", [
+                "Contisuyo",
+                "Ninguno",
+                "Antisuyo",
+                "Collasuyo"
+            ], 1)
            
         ]
 
